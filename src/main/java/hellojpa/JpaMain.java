@@ -45,11 +45,11 @@ public class JpaMain {
             // jpa가 Entity를 트랜잭션 커밋하기 직전에 체크한다 -> 변경이 있을 경우 update 쿼리를 생성하고 전달한다
             // findMember.setName("HelloJPA");
 
-            tx.commit();
+            tx.commit(); // 변경 사항 반영을 위해 반드시 할 것
         }catch(Exception e) {
-            tx.rollback();
+            tx.rollback(); // 에러가 발생한 경우 transaction 롤백
         }finally {
-            em.close();
+            em.close(); // 끝난 후에 데이터베이스 커낵션 반환
         }
         emf.close();
 
