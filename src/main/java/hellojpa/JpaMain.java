@@ -25,13 +25,13 @@ public class JpaMain {
 
             // 전체 데이터 조회
             // 객체를 대상으로 쿼리를 작성(Member 객체를 모두 가지고 와라)
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(0) // 0번 부터
-                    .setMaxResults(8) // 8개의 결과물을 가져와
-                    .getResultList();
-            for(Member member : result) {
-                System.out.println(member.getId()+" "+member.getName());
-            }
+            //            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+            //                    .setFirstResult(0) // 0번 부터
+            //                    .setMaxResults(8) // 8개의 결과물을 가져와
+            //                    .getResultList();
+            //            for(Member member : result) {
+            //                System.out.println(member.getId()+" "+member.getName());
+            //            }
 
             // 특정 데이터 조회
             // Member findMember = em.find(Member.class, 1L);

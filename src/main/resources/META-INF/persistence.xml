@@ -14,7 +14,10 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
-            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+            <!-- 버퍼링, 쿼리가 여러개 쌓여 있을 경우 이를 한번에 db에 전송 -->
+            <property name="hibernate.jdbc.batch_size" value="10"/>
+            <!-- 스키마 자동 생성을 위한 설정 -->
+            <property name="hibernate.hbm2ddl.auto" value="create" />
         </properties>
     </persistence-unit>
 </persistence>
