@@ -45,6 +45,19 @@ public class JpaMain {
             // jpa가 Entity를 트랜잭션 커밋하기 직전에 체크한다 -> 변경이 있을 경우 update 쿼리를 생성하고 전달한다
             // findMember.setName("HelloJPA");
 
+            Member member1 = new Member();
+            member1.setUsername("a");
+
+            Member member2 = new Member();
+            member2.setUsername("b");
+
+            Member member3 = new Member();
+            member3.setUsername("c");
+
+            em.persist(member1);
+            em.persist(member2);
+            em.persist(member3);
+
             tx.commit(); // 변경 사항 반영을 위해 반드시 할 것
         }catch(Exception e) {
             tx.rollback(); // 에러가 발생한 경우 transaction 롤백
